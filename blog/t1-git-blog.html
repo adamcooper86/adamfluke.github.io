@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <head>
-  <title>Your page title here</title>
+  <title>Git, Github, and Version Control</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="your-stylesheet-link-here.css">
 </head>
 
 <main>
-  <h1>Post Title</h1>
-  <h2>The subtitle, if you want it</h2>
-  <h4>Today's Date</h4>
+  <h1>Git, Github, and Version Control</h1>
+  <h2>More confusing than an <a href="http://www.thinkfun.com/izzi">IZZI puzzle</a></h2>
+  <h4>Friday, April 10, 2015</h4>
 
   <section>
+    <h2>Version Control</h2>
     <p>
-      Your first paragraph goes here. I'm using Web 2.0 Ipsum to add content. Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Nuvvo koofers oooooc voxy klout jaiku palantir flickr insala zinch napster oooj, airbnb mzinga vimeo yuntaa balihoo plickers whrrl edmodo appjet kippt. Yoono imvu hulu eduvant blekko imvu ebay voki napster skype, hipmunk zinch wesabe bubbli ning meebo bitly zlio. Fleck elgg ideeli disqus rovio zillow sifteo blyve jabber, bitly geni zoho foodzie qeyno twones klout jiglu, hipmunk jaiku balihoo plickers heekya eskobo yuntaa. Sococo whrrl plickers movity whrrl zinch voki nuvvo meebo, quora heroku unigo kno wufoo jibjab woopra, groupon yuntaa spock mzinga jumo meebo movity.
+      Version control is a difficult subject to define clearly, since it is a concept that includes multiple facets. So, lets just name them and then talk about them.
+      <ul>
+        <li>Version control tracks the state of files as they change over time. A "commit" saves all of the changes to the file.
+        </li>
+        <li>Version control allows a developer to "branch" a copy of the folder to work on without changing the state of the master branch.</li>
+        <li>Version control allows a team of developers to collaborate by pushing/pulling/merging branches with logic to resolve conficts(two changes to the same document).
+        </li>
+      </ul>
+      The first aspect is the easiest to understand from a layman's perspective. Most people are used to being able to save a word document, and if they make a huge mistake, being able to revert to previous versions to undo that mistake. Similarly, most computer users (I am hoping) use some sort of backup software (Timemachine for Mac users). All of the files in the computer are saved as a copy, and you can see them in relation to the time that they were backed up. Version control lets you do something very similar for a folder(and all the files in it) that repersents all of the code for a program.
     </p>
-    <p>
-        Lijit groupon ning stypi eskobo blyve ning shopify oooooc, meebo groupon prezi ebay voxy bitly diigo. Spock ifttt skype hipmunk movity whrrl bebo oooj empressr, disqus insala palantir bitly dropio zimbra zinch oooooc etsy, klout spock insala quora omgpop trulia jibjab. Sifteo dogster ebay grockit geni scribd bitly ning unigo, plickers voki mzinga tumblr kaboodle mozy whrrl woopra udemy, foodzie joukuu elgg twitter shopify akismet rovio. Kosmix eduvant woopra dopplr balihoo ning bebo akismet, boxbe vimeo kosmix shopify zappos bitly geni loopt, qeyno disqus sococo squidoo wikia octopart.
-    </p>
-    <p>
-        Kazaa meevee eduvant gsnap movity kosmix kazaa klout jumo, trulia unigo groupon wakoopa spock knewton glogster heroku oooj, ning imvu appjet eskobo zillow twitter rovio. Glogster chegg voxy greplin dopplr voki foodzie xobni weebly odeo, sococo zynga knewton loopt palantir lala blyve tumblr blekko, twones akismet plaxo kippt meebo zillow zooomr insala. Oovoo imeem napster divvyshot zinch imeem voxy shopify, fleck kazaa zinch lanyrd boxbe joost wakoopa nuvvo, orkut elgg heekya sifteo scribd napster. Yammer yoono groupon dopplr cloudera nuvvo eduvant klout, voxy groupon disqus eduvant oooj greplin.
-    </p>
-
-      <!-- copy and paste as many sections as you want to add paragraphs -->
+    <p>The second aspect gets a little bit more confusing, but version control includes the concept of "branching", which is git-speak for taking all of the code from the master copy and creating a editable sandbox copy that does not change the state of the master copy. To make this clear, you could create a branch for the folder that represents this blog, call it happy-code and replace all of the files with an image of a smiling emogi cat and it would not change this file at all. Assuming that the work I did on happy-code was actually benificial, like implementing a new feature, then the branch gets merged into the master and does change the the folder that gets published.</p>
+    <p>Branching is also what allows multiple developers to work on the same project without constantly conflicting with eachothers work. The branch that developer A is working on doesn't affect the master branch, which means that the branch that developer B is working on is a clean copy that works. When developer A finishes her branch, developer A can check it before merging it with the master branch and vice-versa. </p>
+    <h2>Git</h2>
+    <p>Git is a command line version control program. Using a robust array of commands, a developer uses git to branch, add/commit changes, move between commits(forwad and backward) and perform all of the functions described above. It is version control for your local machine.</p>
+    <h2>Github</h2>
+    <p>Github, by contrast, is version control for the cloud (ish). Github is like dropbox, but for git files and the folders that they are storing. It provides a suit of tools for a team of developers to review/merge eachothers branches through pull requests, and visual tools. It is important to note that Github is not/did not produce git. Git came first, it was a powerful tool before github, but Github made it much easier for teams of developers to collaborate using git.</p>
   </section>
 </main>
 
