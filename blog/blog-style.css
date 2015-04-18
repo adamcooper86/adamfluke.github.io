@@ -1,0 +1,28 @@
+#blog-list {
+  margin: 20px 0px 0px 20px;
+  background-color: rgb(217, 229, 232);
+  border:3px solid rgb(156, 143, 130);
+  padding: 10px;
+  width:93%;
+}
+#blog-list h2 a{
+  color:rgb(58, 75, 79);
+  font-size:1.1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+#blog-list h2 a:hover{
+  color:rgb(130, 150, 156);
+}
+#blog-list h1+p{
+  font-style:italic;
+}
+#blog-list p {
+  margin: 0px 0px 20px 10px;
+}
+
+#blog-list h1 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
