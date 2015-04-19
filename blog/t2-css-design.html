@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Tips and Tricks | Relative Absolute Fixed</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="blog-style.css">
+  <!-- Links for fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <article>
+    <h1>Relatively Fixed or Absolutely Confused?</h1>
+    <h2>The CSS position property, and all the values we can find</h2>
+    <p>Sunday April 18th, 2015</p>
+    <aside>
+      <h2>Summary:</h2>
+      <p>Being able to place elements on a web page is one of the most important aspects of web-design, but which choosing positioning value to use can be frustrating. The CSS position property is an opaque and obscure concept because the values are intuitive in many ways. Exploring the position property, however, can give a developer some clarity.</p>
+    </aside>
+   <section>
+    <h2>The Positioning property explained</h2>
+     <p>Like almost all CSS properties, the position property does not affect the functioning of your HTML webpage. It affects the layout of the webpage. The layout is how we talk about where everything is in relation to everything else.</p>
+     <figure><img src="../imgs/layouts.jpg" alt="A picture of 6 layouts that use different positioning properties"/><figcaption>This image shows examples of layouts that use the positioning property to organize content.</figcaption></figure>
+     <p>To be clearer, the position property in CSS tells your browser where to put something in relation to something else. That is it. It is like if you were standing in a room, and I wanted to get you to move towards the door. I can tell you, "From where you are now, go forward three steps", or I could tell you, "Go to the north wall, three paces from the east wall". No matter what I tell you to do, it is always in relation to somewhere. The position property works the same way, it tells the browser to take an element and put it somewhere relative to something.</p>
+     <code>img {postition:relative; top:-20px;)</code>
+     <p>In the above example, the browser is being told, take the image and move it from where you think it should be twenty pixels up.</p>
+    <h2>Fixed</h2>
+    <p>The :fixed value for the position property is by far the easiest to get. It says, element-x is placed relative to the browser window, literally the rectangular outline of what we can see. Like the rest of the positioning elements, you declare how far away the element should be from the top, bottom, left or right of the screen. Elements that are fixed do not scroll, and are taken out of the normal flow of the document.</p>
+    <aside>
+      <h2>Static is actually the easiest</h2>
+      <p>Position:static; is actually the easiest to understand, because it is how the html is written. First things first, one right below the other. We just don't think of the static very often since it is the browser default.</p>
+    </aside>
+    <h2>Relative</h2>
+    <p>The value relative is a bit more obtuse. It says to place the element up, down, left, right of where it otherwise would have been rendered. This means if content is added above it in the html document, and therefor where is should be changes, it will change along with it. This is useful when the goal is to layer elements on top of eachother so that they are overlapping. Of note is the fact that postition relative does not remove the element from the normal flow of the document and will leave the space it would have taken empty.</p>
+    <figure><img src="../imgs/relative.gif" alt="Diagram of a box being moved relative to where it would have been" /><figcation>This image shows how divB is moved relative to where it would have been. If divC were moved on top of divA in the HTML, divB would move down one space.</figcaption></figure>
+    </section>
+    <h2>Absolute</h2>
+    <p>The absolute value for position is by far the most obtuse and unintuitive. An absolutely positioned element is moved in relation to its first positioned ancestor. Lets unpack that sentence a bit.</p>
+    <p>First, it only cares about ancestors, meaning elements that it is inside of. Put another way, it only cares about elements that "wrap" around it, that the parents start tag is before it and its end tag is after it. Second, the parent, grandparent, great... must be positioned. It must have a css declaration of position:something (note: if the parent is position:static, it won't be positioned). Finally, it looks untill it finds one, and then stops looking. Odd behavoir sometimes occurs because the element has a parent that is positioned without the developer realizing it.</p>
+  </article>
+  <footer>
+    <a href="blog-index.html">Back to Blog</a>
+    <a href="../index.html">Home</a>
+    <p>Website design and developement by &copy;Adam Fluke. <a href="../LICENSE">License and Terms of Use</a></p>
+  </footer>
+</body>
+</html>
