@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Tips and Tricks | Find your way around .Map</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="blog-style.css">
+  <!-- Links for fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <article>
+    <h1>Find your way around .Map</h1>
+    <h2>Array to Array love has never been easier to discover!</h2>
+    <p>Friday April 29th, 2015</p>
+    <aside>
+      <h2>Summary:</h2>
+      <p>Lets take a look at the Array method .map and discover where it takes us. It is a good example of a method built on the .each method, and can drastically simplify code that is over-reliant on the .each method.</p>
+    </aside>
+   <section>
+    <h3>Enumerator#map</h3>
+    <p>The enumerator module is mixed into several different class types, including arrays, hashes, ranges, and sets. Only one of them has the .map method, Arrays. The .map method is easier to understand if you understand that it is built on the .each method; it iterates through the array and passes each value to a code block to do whatever with it.</p>
+    <p>The difference is that instead of each value being passed to the code block and being unchanged, .map returns(yields) the result of the code block to the collection and returns the altered collection instead of the original collection (in the case of .map, the collection is unaltered after the completion of the method, and .map! it is permanently altered).</p>
+    <aside>
+      <h3>.each, the cornerstone</h3>
+      <p>All collections in Ruby, including custom classes that mix-in the Enumerator module, are build on the each method. If a class has an each method, it is possible to use the other methods housed in Enumerator, including .index, .map, .find, etc. This is even true for your own classes (say if you made a special type of enumerator).</p>
+    </aside>
+    <p>In a general sense, if your goal is to take an array, modify the contents, and return an array of the elements after the modification; .map is your method. ARRAY =>CHANGE => ARRAY(CHANGED). Remember .each returns nothing when it is done, so the difference is that .map returns the altered array.<p>
+    <p>Lets get to some examples: (IRB it up, or just follow along)</p>
+    <p>a = [1,2,3,4,5,6,7,8,9]</p>
+    <p>a_s = [“one”,”two”,”three”,”four”,”five”]</p>
+    <p>#use .map to square every number</p>
+    <p>a.map {|v| v**2 }</p>
+    <p>[1,2,9,16,25,36,49,64,81]</p>
+    <p>#.each doesn’t return any of the values</p>
+    <p>a.each {|v| v**2 }</p>
+    <p>[1,2,3,4,5,6,7,8,9]</p>
+    <p>#because a.map is non-destructive a is left unchanged</p>
+    <p>a</p>
+    <p>[1,2,3,4,5,6,7,8,9]</p>
+    <p>#however, if you want to ensure that the array returned is the same array, .map! will alter the array</p>
+    <p>a.map {|v| v + 1}</p>
+    <p>[2,3,4,5,6,7,8,9,10]</p>
+    <p>Beyond just the mechanics of .map, we should a talk about when you might want to use it.</p>
+    <ul>
+      <li>When you are starting with an array and trying to return an array.</li>
+      <li>When you want to apply a block of logic to every element in an array (when you would want to use .each)</li>
+      <li>When you aren’t adding elements to the array or searching for matching elements</li>
+    </ul>
+    <p>Good luck, and I hope you can now find your way with .map!</p>
+    </section>
+  </article>
+  <footer>
+    <a href="blog-index.html">Back to Blog</a>
+    <a href="../index.html">Home</a>
+    <p>Website design and developement by &copy;Adam Fluke. <a href="../LICENSE">License and Terms of Use</a></p>
+  </footer>
+</body>
+</html>
