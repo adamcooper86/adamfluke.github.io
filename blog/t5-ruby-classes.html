@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <title>Tips and Tricks | A Wizard By Any Other Name</title>
   <link rel="stylesheet" type="text/css" href="../style.css">
-  <link rel="stylesheet" type="text/css" href="blog-style.css">
   <!-- Links for fonts -->
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <article>
-    <h1>A Wizard By Any Other Name</h1>
-    <h2>An exploration of Ruby Classes through Hogwarts</h2>
-    <p>Wednesday May 6th, 2015</p>
-    <aside>
-      <h2>Summary:</h2>
-      <p>Lets face it, most wizards are the same. take one wand, a knowlege of some latin-ish phrases, and a broomstick... presto-chango Wizard. Thus, they make a perfect example of what a Class in Ruby can do to model instances of classes.</p>
-    </aside>
-   <section>
-     <h3>A Wizard is a person.</h3>
-     <p>Not much separates a wizard from a muggle, anatomically speaking. They both are vaguely human, have a sex, have names, and some number of distinguishing characteristics. Thus the first thing that we have to do to model them is define what method/attributes a person should have.</p>
-     <code>
+<article>
+  <h1>A Wizard By Any Other Name</h1>
+  <h2>An exploration of Ruby Classes through Hogwarts</h2>
+  <p>Wednesday May 6th, 2015</p>
+  <aside>
+    <h2>Summary:</h2>
+    <p>Lets face it, most wizards are the same. Take one wand, a knowlege of some latin-ish phrases, and a broomstick... presto-chango Wizard. Thus, they make a perfect example of what a Class in Ruby can do to model instances of classes.</p>
+  </aside>
+  <section>
+    <h3>A Wizard is a person.</h3>
+    <p>Not much separates a wizard from a muggle, anatomically speaking. They both are vaguely human, have a sex, have names, and some number of distinguishing characteristics. Thus the first thing that we have to do to model them is define what method/attributes a person should have.</p>
+    <pre>
+    <code>
       require 'date'
       class Person
         attr_reader :name, :sex, :physical_characteristics, :birthday
@@ -32,18 +32,20 @@
           @birthday = birth
           @@population +=1
         end
-
+      
         def small_talk string
           puts "Hello, #{string}."
         end
-
+      
         def pop
           @@population
         end
       end
-     </code>
-     <p>A very basic person class, but sufficient for our purposes. A person can be created, with all of the Attributes we'd expect, and can even do what muggles do best, which is talk. For example:</p>
-     <code>
+    </code>
+    </pre>
+    <p>A very basic person class, but sufficient for our purposes. A person can be created, with all of the Attributes we'd expect, and can even do what muggles do best, which is talk. For example:</p>
+    <pre>
+    <code>
       uncle_vernon = Person.new("Vernon Dursley", :male, Date.new(1950,2,2), hair:"blond", weight: 250, mustache: true)
 
       uncle_vernon.name
@@ -52,28 +54,35 @@
       =>"Hello, there'll be no funny business"
       uncle_vernon.pop
       => 1
-     </code>
-     <aside>
-      <h3>Class Variables, Hash Sugar and Date</h3>
+    </code>
+    </pre>
+    <aside>
+      <h2>Class Variables, Hash Sugar and Date</h2>
       <p>For kicks I included a class variable that will track the population of our YA fantasy book. Right now it will only track the number of muggles we create but some magic will happen later. The class initialization method expects an optional hash that can be any number of distinquishing key/value pairs. Ruby is really nice and lets you define these key/value pairs as symbol/value pairs on the end of the arguement list. Also, the birthday is a Date object, which is better than a string in this case because you could use it to determine age, etc.</p>
-     </aside>
-     <h3>But Muggles suck, we want Wizards!</h3>
-     <p>It is true that we weren't trying to create muggles, but now we have a backbone to build our Wizard class from, the person class. We do this in the class definition using a "<" less-than carrot.</p>
-     <code>
+    </aside>
+    <h3>But Muggles suck, we want Wizards!</h3>
+    <p>It is true that we weren't trying to create muggles, but now we have a backbone to build our Wizard class from, the person class. We do this in the class definition using a "<" less-than carrot.</p>
+    <pre>
+    <code>
      class Wizard < Person
      end
 
-     harry = Wizard.new("Harry Potter", :male, Date.new(1986,7,14), hair:"black", weight: 70, scar: true)
-     </code>
-     <p>Now we have something going! We have made a wizard, sure, Hagrid hasn't told him yet, but he is an instance of the Wizard class. He has all of the instance variables that a person does, name, birthday, etc. and all of the muggle methods, namely small_talk. Earlier, we had Person add 1 to its class variable, @@population when ever a person was created. We could naturally assume that Wizard would act the same way and the Wizard population would be one at this point.</p>
-     <code>
+     harry = Wizard.new("Harry Potter", :male, Date.new(1986,7,14),
+      hair:"black", weight: 70, scar: true)
+    </code>
+    </pre>
+    <p>Now we have something going! We have made a wizard, sure, Hagrid hasn't told him yet, but he is an instance of the Wizard class. He has all of the instance variables that a person does, name, birthday, etc. and all of the muggle methods, namely small_talk. Earlier, we had Person add 1 to its class variable, @@population when ever a person was created. We could naturally assume that Wizard would act the same way and the Wizard population would be one at this point.</p>
+    <pre>
+    <code>
       harry.pop
       => 2
-     </code>
-     <p>What happened? Here is a good example of class variables. Class variables are the same variable for the class and all decendants of that class, and all instances of those decendants. When Harry was created, @@population in the Person class was incremented once.</p>
-     <h3>Finishing up the Wizard Class</h3>
-     <p>Now we can add a few wizard specific attributes (instance variables) and methods.</p>
-     <code>
+    </code>
+    </pre>
+    <p>What happened? Here is a good example of class variables. Class variables are the same variable for the class and all decendants of that class, and all instances of those decendants. When Harry was created, @@population in the Person class was incremented once.</p>
+    <h3>Finishing up the Wizard Class</h3>
+    <p>Now we can add a few wizard specific attributes (instance variables) and methods.</p>
+    <pre>
+    <code>
       class Wizard < Person
         attr_accessor :wand, :house, :broom
         def cast spell
@@ -86,19 +95,22 @@
       harry.broom = "Nimbus 2000"
 
       p harry
-      =><Wizard:0x007ffbdd011608 @name="Harry Potter", @sex=:male, @physical_characteristics={:hair=>"black", :weight=>70, :scar=>true}, @birthday=#<Date: 1986-07-14 ((2446626j,0s,0n),+0s,2299161j)>, @wand="pheonix feather", @house="Griffindor", @broom="Nimbus 2000">
+      =><\Wizard:0x007ffbdd011608 @name="Harry Potter", @sex=:male, @physical_characteristics=
+      {:hair=>"black", :weight=>70, :scar=>true}, @birthday=#<Date: 1986-07-14 ...>,
+      @wand="pheonix feather", @house="Griffindor", @broom="Nimbus 2000">
 
       harry.cast("Expelliarmus")
       =>"EXPELLIARMUS!!"
-     </code>
-     <p>Here we see our final instance variables, and instance method playing out. Harry goes to Diagon Alley and gets his pheonix feather wand, then the sorting hat puts him in Griffindor, and finally, Prof. McGonagle gives him a Nimbus 2000. These are all stored as instance variables through the attr_accessor short hand. Finally, he learns his favorite spell, and screams it out to disarm Snape! EXPELLIARMUS!</p>
-     <p>I hope you found my demonstration of classes, class variables, instance variables, instance methods, getter/setter shorthand, and Potter-Fandom instructive. If you have any questions or corrections, reach out on twitter, @fluke_adam.</p>
-    </section>
-  </article>
-  <footer>
-    <a href="blog-index.html">Back to Blog</a>
-    <a href="../index.html">Home</a>
-    <p>Website design and developement by &copy;Adam Fluke. <a href="../LICENSE">License and Terms of Use</a></p>
-  </footer>
+    </code>
+    </pre>
+    <p>Here we see our final instance variables, and instance method playing out. Harry goes to Diagon Alley and gets his pheonix feather wand, then the sorting hat puts him in Griffindor, and finally, Prof. McGonagle gives him a Nimbus 2000. These are all stored as instance variables through the attr_accessor short hand. Finally, he learns his favorite spell, and screams it out to disarm Snape! EXPELLIARMUS!</p>
+    <p>I hope you found my demonstration of classes, class variables, instance variables, instance methods, getter/setter shorthand, and Potter-Fandom instructive. If you have any questions or corrections, reach out on twitter, @fluke_adam.</p>
+  </section>
+</article>
+<footer>
+  <a href="blog-index.html">Back to Blog</a>
+  <a href="../index.html">Home</a>
+  <p>Website design and developement by &copy;Adam Fluke. <a href="../LICENSE">License and Terms of Use</a></p>
+</footer>
 </body>
 </html>
