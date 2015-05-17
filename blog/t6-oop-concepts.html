@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Tips and Tricks | Putting variable in the Cross-hairs</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <!-- Links for fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<main>
+  <nav>
+    <a href="../index.html"><img src="../imgs/home.png" alt="About me hexagon"></a>
+    <a href="../blog/blog-index.html"><img src="../imgs/blog.png" alt="Blog Hexagon"/></a>
+    <a href="../projects.html"><img src="../imgs/projects.png" alt="Project hexagon"></a>
+    <a href="https://twitter.com/fluke_adam" class="social"><img src="../imgs/twitter.png" alt="Connect with me via twitter" /></a>
+    <a href="https://www.facebook.com/adam.fluke.1" class="social"><img src="../imgs/facebook-poly.png" alt="Connect with me via facebook" /></a>
+  </nav>
+  <header>
+    <h1>Tips and Tricks</h1>
+    <p>A easy-going blog about my travels through the wed-developement landscape; the refreshing streams, the lively communities, and the abundunt resources of the digital age.<p>
+  </header>
+<article>
+    <h1>Variables, Scopes, and Frustration</h1>
+    <h2>Putting variables in the cross-hairs</h2>
+    <p>Sunday May 16th, 2015</p>
+    <aside>
+      <h2>Summary:</h2>
+      <p>Ruby has 5 different types of variables available for developers, but where they are available, what they are pointing to, and how they should be used is a veritible quagmire.</p>
+    </aside>
+   <section>
+    <h3>Variable Scope</h3>
+    <p>Understanding what a variable is holding or pointing to at any given time/place is not always as straightforward as it may seem. More frustratingly, confusion over what a variable name means at any given time produces unexpected behavior that can be difficult to track down. Why is number_of_fuzzy_widgets_produced returning  500, I only made 50? Why  crucial_variable keep raising an error LOCAL VARIABLE NOT DEFINED, I am looking at it right now, it is defined!!! AHAHAHAAAAA!</p>
+    <img src="http://natashatherobot.com/wp-content/uploads/variable-scope-ruby.jpg" alt="image of box model for scope"/>
+    <p>Ruby scoping is based on a box model of scope variables, where variables can look up through the scopes, local => instance => class => global/constant. Ruby does not look down for variables however, and we’ll explore what that means in a little bit. Local variables, identifiable by their lack of a symbol or capital letter in their name, are only accessible in the block that they are in, or in blocks that are “in” them. You can identify a block three ways; first if they are method or class definition, second if they are part of a do/end method (like each do … end), or part of a literal block {}. For example:</p>
+    <pre><code>
+      def hello
+        ...
+      end
+
+      app.each do |x|
+        x ...
+      end
+
+      app.select { ... }
+    </code></pre>
+    <h3>A variety of variables and scopes</h3>
+    <p>Sometimes the best way to learn about a subject is to see it in action. Lets go through some example ruby code to learn about the variables in Ruby, and then summerize them.</p>
+    <pre><code>
+#This is a local variable defined in the “main” object,
+#and will be available in any method described in it,
+#or at any place lower in the main object.
+name = “Jack”
+
+#Scope1 is “in” the main object, so it has name available to it.
+def scope1
+  name = “Suzy”
+  gender = "female"
+end
+
+#however gender was defined in scope1 and isn't available in main
+gender #causes a NameError: undefined local variable or method
+
+#Constants and global variables are available everywhere in the program
+$conversion_rate = "3.14".to_f
+BOOKIE = "Wise Guy"
+
+#Starting  a new class starts a new scope,
+#local variables from main or scope1 won't be available
+#to methods in the class.
+class Scope2
+  def make_name
+    name = "jack"
+  end
+
+  #instance variables, unlike local variables, persist and are available
+  #to the instance they are in even after the method returns
+  def make_gender
+    @gender = :male
+  end
+
+  def gender?
+    @gender #returns :male
+  end
+
+  #class variables are available to all instances of a class,
+  #and all decendant classes.
+  def team_roster
+    @@roster << self
+  end
+
+  def get_roster
+    @@roster  #returns all of the instances of that class
+  end
+end
+</code></pre>
+    </p>In summary, Local variables are only available in the method or object where they are defined, or lower in the heirarchy (or stated another way, an object can only look up the relationship tree). Local variables can be used in any number of methods safely since they are cleaned up as soon as the method is done. Instance variables (@variables), persist in an objects and are available to all of the methods in object. Class variables (@@variables) are shared by all instances of a class, and all instances of any decendant class. Finally, constants (CAPSVARIABLES) and global variables ($variables) are available everywhere once they have been defined.</p>
+    </section>
+  </article>
+  <footer>
+    <a href="blog-index.html">Back to Blog</a>
+    <a href="../index.html">Home</a>
+    <p>Website design and developement by &copy;Adam Fluke. <a href="../LICENSE">License and Terms of Use</a></p>
+  </footer>
+</main>
+</body>
+</html>
