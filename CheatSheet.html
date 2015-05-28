@@ -20,7 +20,6 @@
     <a href="#each_slice">Each_Slice</a>
     <a href="#each_with_index">Each_With_Index</a>
     <a href="#inject">Inject</a>
-    <a href="#reduce">Reduce</a>
     <a href="#select">Select</a>
   </nav>
 
@@ -84,12 +83,40 @@
     </pre>
   </section>
   <section><h2><a name = "each_with_index">Each_With_Index</a></h2>
-    <p>Count counts how many times an object is in the enumberable, or give it a block and it will tell you how many times the block returns true.</p>
+    <p>Each_with_index itterates over an enumerable, but passes in a count parameter that increments by one each time.</p>
     <pre>
     <code>
-      ["cat","bat","mat"].count{|word| word.length == 3} #returns 3
-      ["cat","bat","hats"].count{|word| word.length == 3} #returns 2
-      ["cat","bat","hats"].count{|word| word == "bat"} #returns 1
+      array = []
+      ["cat","bat","mat"].each_with_index{|word, count| word.length + count}
+        #array = [3,4,5]
+      ["cat","bat","hats"].each_with_index{|word, count| array << word << count}
+        #array = [cat,0,bat,1,hats,2]
+    </code>
+    </pre>
+  </section>
+  <section><h2><a name = "inject">Inject</a></h2>
+    <p></p>
+    <pre>
+    <code>
+      ["cat","bat","mat"].inject(:+)
+        #returns "catbatmat"
+      ["cat","bat","hats"].inject(1){|sum, string| sum * string.length}
+        #returns 27
+      ["cat","bat","hats"].inject do |memo, word|
+        memo.length > word.length ? memo : word
+      end
+      #returns hats
+    </code>
+    </pre>
+  </section>
+  <section><h2><a name = "select">Select</a></h2>
+    <p>Returns an array containing all elements of the enumerator for which the block returns a true value.</p>
+    <pre>
+    <code>
+      ["cat","bats","mat","rats"].select{|word| word.length == 4}
+        #array = ["bats","rats"]
+      ["cat","bat","hats"].select{|word| word == "bat"}
+        #array = ["bat"]
     </code>
     </pre>
   </section>
