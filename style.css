@@ -212,6 +212,12 @@ aside h2, aside p {
   color: white;
 }
 
+span.selection {
+  color: red;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
 footer a {
   color: white;
   margin: 15px;

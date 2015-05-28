@@ -21,15 +21,39 @@
     <p>A easy-going blog about my travels through the web-development landscape; the refreshing streams, the lively communities, and the abundant resources of the digital age.<p>
   </header>
 <article>
-    <h1><!--Title goes here--></h1>
-    <h2><!--Subtitle goes here --></h2>
-    <p><!-- update date in format of Saturday April 11th-->, 2015</p>
+    <h1>Ruby Hashes, theres no place like dorethy.home</h1>
+    <h2>A comparison of Ruby hashes and Javascript Objects</h2>
+    <p>May 25th, 2015</p>
     <aside>
       <h2>Summary:</h2>
-      <p><!-- Summary goes here --></p>
+      <p>Javascript Objects and Ruby Hashes behave very similarly, though they differ in a number of important ways.</p>
     </aside>
    <section>
-     <p><!-- Content goes here --></p>
+     <h3>You hand me at {}'s</h3>
+     <p>Both Ruby hashes and JS objects are signified with a pair of curly brackets, which gives us our first hint of thier shared functionality. Looking at a JS object:</p>
+<pre>
+  <code>
+    var object = {};
+    --> {}
+  </code>
+</pre>
+      <p>and a ruby hash:</p>
+<pre>
+  <code>
+    object = {}
+    --> {}
+  </code>
+</pre>
+      <p>it is pretty clear that they atleast look the same. Truely, they do share some functionality beyond appearance. You can add/store/retrieve key/value pairs from either structure, and itterate over their values.You can make lists of their keys, or values.</p>
+      <h3>So what's the difference?</h3>
+      <p>One of the major differences is that Javascript objects can behave more like class instances in Ruby, because objects can store functions. Ruby hashes can't store methods, because a method isn't an object. For example, this will work in javascript, but won't in Ruby:</p>
+<pre>
+  <code>
+    var object = {first: 1, second: 2, this.sum = function(){this.first + this.second}};
+    object.sum();
+    --> 3
+  </code>
+</pre>
     </section>
   </article>
   <footer>
