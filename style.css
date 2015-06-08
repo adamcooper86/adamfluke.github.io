@@ -1,6 +1,5 @@
 body {
   background-color: rgb(0, 55, 79);
-  background-image: url(imgs/blue_tile.jpg);
   margin: 0px;
 }
 h1, h2, h3, h4, h5, h6, p, li {
@@ -26,9 +25,29 @@ header, section, nav, article, .box {
 h1 {
   font-size: 1.7em;
   color: rgb(239,239,239);
-  text-align: center;
+  text-align: left;
   text-shadow:2px 1px rgb(0,30,40);
   font-style: italic;
+}
+
+#home h1, #home p{
+  margin-left: 20%
+}
+#home p {
+  font-size: 1.3em;
+  margin-left: 50%;
+  color: rgb(239,239,239);
+  text-align: left;
+  text-shadow:2px 1px rgb(0,30,40);
+  font-style: italic;
+  position: relative;
+  top: -1em;
+}
+#home {
+  background-color: inherit;
+  border: none;
+  min-width: 620px;
+  margin: 40px 5%;
 }
 h2 {
   font-size:1.1em;
@@ -97,6 +116,8 @@ nav img {
   margin: 2%;
 }
 .project-summary h1 {
+  color: rgb(20, 20, 50);
+  text-shadow: 2px 1px rgb(260,260,260);
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 5px;
