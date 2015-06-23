@@ -16,10 +16,54 @@ h2 {
   font-size: 135%;
 }
 
+h3 {
+  font-size: 125%;
+}
+
 nav {
   float:right;
+  margin-left: 10px;
+}
+
+nav h1 {
+  font-size: 110%;
 }
 
 nav a {
   display: block;
 }
+
+header {
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.book_title {
+  text-decoration: underline;
+}
+
+aside {
+  float: right;
+  width: 25%;
+  margin-right: 10px;
+  border-left: 1px solid grey;
+  padding-left: 5px;
+}
+
+.good_example {
+  background-color:rgb(224, 255, 240);
+}
+
+.bad_example {
+  background-color:rgb(255, 178, 178);
+}
+
+.example {
+  border-bottom: 1px solid grey;
+}
+
+.syntax_example {
+  background-color: rgb(255, 255, 235);
+}
+
+
