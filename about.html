@@ -1,30 +1,90 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adam Fluke's Website</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <!-- Links for fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="fix.css">
 </head>
 <body>
-<main>
-<nav>
-  <a href="index.html"><img src="imgs/home.png" alt="About me hexagon"></a>
-  <a href="blog/blog-index.html"><img src="imgs/blog.png" alt="Blog Hexagon"/></a>
-  <a href="projects.html"><img src="imgs/projects.png" alt="Project hexagon"></a>
-  <a href="https://twitter.com/fluke_adam" class="social"><img src="imgs/twitter.png" alt="Connect with me via twitter" /></a>
-  <a href="https://www.facebook.com/adam.fluke.1" class="social"><img src="imgs/facebook-poly.png" alt="Connect with me via facebook" /></a>
-</nav>
-<h1>Commitment</h1>
-<h1>Compassion</h1>
-<h1>Rigor</h1>
-<h1>Zeal</h1>
-<div class="box"><img src="imgs/profile.jpg" alt="profile image, me in a tie">
-<p>I am committed to making beautiful code. Code that is meaningful to real people. Code that is beyond the standards, and produced with an exacting obsession.</p></div>
-<footer>
-  <p>Website design and developement by &copy;Adam Fluke. <a href="LICENSE">License and Terms of Use</a></p>
-</footer>
-</main>
+<div class="container-fluid">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand active" href="index.html">BipHub</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="blog/blog-index.html">Blog</a></li>
+          <li class="active"><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Developer <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="developer.html">Bio</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="articles.html">Articles</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+  <div class="row">
+    <div class="col-sm-8">
+      <h1>The Why:<span class = "text-muted"> Poorly managed behavoir data is a loadstone dragging down students, teachers, and school cultures.</h1>
+
+    </div>
+    <div class="col-sm-3">
+      <img src="imgs/frustrated_student_one.jpg" class="img-responsive img-rounded" alt="Responsive image">
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="row container-fluid">
+    <div class= "col-sm-3 hidden-xs">
+      <img src="imgs/frustrated_student_two.jpg" class="img-responsive img-rounded" alt="Responsive image"/>
+      <img class = "divider img-reponsive" src="imgs/divider-grey.png"/>
+      <h3><span class="text-primary">Build a better tomorrow, today! ~ <span class="text-muted">It is the responsibility of every human to leave the world better than they found it, so why wait!</span></h3 >
+    </div>
+    <div class="panel panel-default col-sm-9">
+      <div class="panel-heading">
+        <h3 class="panel-title">Student frustrations</h3>
+      </div>
+      <div class="panel-body">
+        <p>Bibhub was designed first with a focus on students, honoring our first value, <span class = "text-primary">Build a better tomorrow</span>. There are a lot of student frustrations around behavoir data, but they can be grouped into three general catagories; Opaqueness, Inconsistency, and Ineffectiveness.<p>
+        <ul>
+          <li>
+            <h4>Opaqueness - </h4>
+            <p>Many students who struggle with behavoir, also struggle with understanding the behavoir data tracking that is often implemented as part of their BIP. Since it is often related to their rewards, this opaqueness can lead to more frustration and reduce buy-in. It can feel like the reward system is being done to them instead of earned by them. This feeling is sometimes expressed as being "just lucky" on a successful day, or "I'm always like this" on less successful days.</p>
+          </li>
+          <li>
+            <h4>Inconsistency - </h4>
+            <p>We all know how important consistency is to all students. Poorly managed behavoir data is <span class="text-warning">inherently inconsistent!</span> When data is incomplete, lost, misrecorded, or just late in getting reported it breaks the behavoir/feedback cycle. Worse, it does so in a stochastic manner. This errodes the trust, sometimes nominal to begin with, that a student has that the system is fair. If data only gets back to the Special Education Teacher on good days, or only on bad days, the system is out of balance.</p>
+          </li>
+          <li>
+            <h4>Ineffectiveness - </h4>
+            <p>The hands-down most demoralizing experience for the student is when <span class = "text-warning">it doesn't work</span>. Biphub's foundation is simple logic, bad data + good intentions = bad decisions. Hope is a precious commodity for students who feel cronically unsuccessful. Being under a behavoir plan that they can't be successful at, or that doesn't target the correct antecedents or skill gaps reinforces the idea that they are the problem. Poorly managed behavoir data systems are inherently dangerous because they can give false positives, fail to show successes that are happening, or take to long to give the team the signal that the student can't be successful.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <footer class="footer row">
+    <div class="col-sm-2"></div>
+    <p class="col-sm-10">Website design and developement by &copy;Adam Fluke. <a href="LICENSE">License and Terms of Use</a></p>
+  </footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

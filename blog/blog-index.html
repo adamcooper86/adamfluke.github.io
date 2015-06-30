@@ -2,60 +2,73 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8"/>
-  <title>Tips and Tricks Blog</title>
-  <link rel="stylesheet" type="text/css" href="../style.css">
-  <!-- Links for fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIP Blog</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../fix.css">
 </head>
 <body>
-<main>
-  <nav>
-    <a href="../index.html"><img src="../imgs/home.png" alt="About me hexagon"></a>
-    <a href="../blog/blog-index.html"><img src="../imgs/blog.png" alt="Blog Hexagon"/></a>
-    <a href="../projects.html"><img src="../imgs/projects.png" alt="Project hexagon"></a>
-    <a href="https://twitter.com/fluke_adam" class="social"><img src="../imgs/twitter.png" alt="Connect with me via twitter" /></a>
-    <a href="https://www.facebook.com/adam.fluke.1" class="social"><img src="../imgs/facebook-poly.png" alt="Connect with me via facebook" /></a>
+<div class="container-fluid">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand active" href="../index.html">BipHub</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="blog-index.html">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Developer <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../developer.html">Bio</a></li>
+              <li><a href="../projects.html">Projects</a></li>
+              <li><a href="../articles.html">Articles</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
   </nav>
-  <header>
-    <h1>Tips and Tricks</h1>
-    <p>A easy-going blog about my travels through the wed-developement landscape; the refreshing streams, the lively communities, and the abundunt resources of the digital age.<p>
-  </header>
-  <section id="blog-list">
-    <h2><a href="c9-questions.html">Getting the most from every question</a></h2>
-    <p>To get the answers you are looking for, it is important to be asking the right questions, the right way. Make sure your questions are unique, researched, and specific.</p>
-    <h2><a href="t8-tech.html">Active Record</a></h2>
-    <p>I am no expert on interacting with a DB through SQL, but luckily, Rails does alot of that for me. It takes Ruby's syntactic sugar to the next level, and lets object models persist in the database.</p>
-    <h2><a href="c8-conflict.html">Responsible Conflict</a></h2>
-    <p>Conflict in work is inevitable, and all the more common in situations where someone is messing with your sandbox. How to prevent them, and resolve them when they go bad.</p>
-    <h2><a href="t7-JavaScript.html">Ruby Hashes, theres no place like dorethy.home</a></h2>
-    <p>Javascript Objects and Ruby Hashes behave very similarly, though they differ in a number of important ways.</p>
-    <h2><a href="c7-values.html">Evaluating Valuable Values Verbosely</a></h2>
-    <p>Values are the framework from which success is built. I hope that mine are strong enough to support my dreams. Bravery will be my focus for my time in DevBootcamp and the year to come.</p>
-    <h2><a href="t6-oop-concepts.html">31 Flavors of Variables</a></h2>
-    <p>Ruby has 5 different types of variables available for developers, but where they are available, what they are pointing to, and how they should be used is a veritible quagmire.</p>
-    <h2><a href="c6-stereotype-threat.html">When a Loose/Loose gets worse</a></h2>
-    <p>Stereotype threat, or the perception of being judged socially based on the performance of an indentity stereotype, happens in most peoples lives several times a day, with varying concequences. During a nine-week intensive coding bootcamp, the number of oportunities for stereotype threat to come into play drastically increases, and their concequences felt more keenly.</p>
-    <h2><a href="c5-feedback.html">Pairing, Feedback, and the Force</a></h2>
-    <p>I have loved working in pairs with other DBC students while learning Ruby, especially on complex challenges. However, some parts of the DBC experience may be turning me into to the darkside, "Noooo! Nooo! *Over acting anguish* NooOooOOoo!"</p>
-    <h2><a href="t5-ruby-classes.html">A Wizard by any other Name</a></h2>
-    <p>Lets face it, most wizards are the same. Take one wand, a knowlege of some latin-ish phrases, and a broomstick... presto-chango Wizard. Thus, they make a perfect example of what a Class in Ruby can do to model instances of classes.</p>
-    <h2><a href="c4-tech-issues.html">Developement Women</a></h2>
-    <p>Women in the developement field report feelings of isolation, a hostile or offensive work environment, and perceptions of being passed over for promotion or choice assignments. In a sector of the economy that is predominately male, it is up to us to ensure all of our coworkers feel safe, respected, and recognized for their achievements.</p>
-    <h2><a href="t4-enumerable-methods.html">Find your way around .Map</a></h2>
-    <p>Lets take a look at the Array method .map and discover where it takes us. It is a good example of a method built on the .each method, and can drastically simplify code that is over-reliant on the .each method.</p>
-    <h2><a href="t3-arrays-hashes.html">Matryoshka Nesting Hashes</a></h2>
-    <p>Do store something you need something, like a box. Arrays and hashes are Ruby's version of boxes. At their core, they both store objects, Integers, Strings, etc. However, they do differ in important and subtle ways.</p>
-    <h2><a href="c3-thinking-style.html">ASCRAR - ASsume CRAzy Reasons</a></h2>
-    <p>Delve deep into how I think about how I think. Its a trip, partway down memory lane and to the right of objectively rational. Hopefully the way I think will change and adapt to the demands place on me in the months to come.</p>
-    <h2><a href="t1-git-blog.html">Do you Git it?</a></h2>
-    <p>Version control is a foundational skill and concept for web-developers, but learning about it doesn't need to feel ominous. Believe it or not, most of the concepts are very intuitive for most of us. Don't let the jargon of the locals keep you from embracing version control and learning conversational Git-speak.</p>
-    <h2><a href="c1-chefs-kitchen.html">The posiblity-responsiblity theorum</a></h2>
-    <p>Most of us are conditioned to consume education, to take in what the universe(ity?) ordains we should learn. The Devbootcamp experience has the potential to be so much more. It is designed to let the learners push the curriculum, to mold the outcomes, and expand the range of whats possible. It is also, then, our responsiblity to do so.</p>
-    <h2><a href="t2-css-design.html">Relatively Fixed or Absolutely Confused?</a><h2>
-    <p>Being able to place elements on a web page is one of the most important aspects of web-design, but which choosing positioning value to use can be frustrating. The CSS position property is an opaque and obscure concept because the values are intuitive in many ways. Exploring the position property, however, can give a developer some clarity.</p>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="jumbotron col-sm-8">
+      <h1><sup>The</sup> BIP Blog</h1>
+      <p>A collections of thoughts on behavoir management in schools, teacher experiences, and BipHub developement.</p>
+      <p><a class="btn btn-primary btn-lg" href="../about.html" role="button">Biphub, huh?</a></p>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <section class="container">
+    <h3>Most Recent:</h3>
+    <section id="blog-list">
+      <div class="media">
+        <div class="media-left">
+          <a href="c5-feedback.html">
+            <img class="media-object blog-list-img" src="http://img3.wikia.nocookie.net/__cb20131009153136/starwars/images/b/bd/Force_Choke_TCG.JPG" alt="force choke image">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Pairing, Feedback, and the Force</h4>
+         <p>I have loved working in pairs with other DBC students while learning Ruby, especially on complex challenges. However, some parts of the DBC experience may be turning me into to the darkside, "Noooo! Nooo! *Over acting anguish* NooOooOOoo!"</p>
+        </div>
+      </div>
+    </section>
   </section>
-  <footer>
-    <p>Website design and developement by &copy;Adam Fluke. <a href="../LICENSE">License and Terms of Use</a></p>
+  <footer class="footer row">
+    <div class="col-sm-2"></div>
+    <p class="col-sm-10">Website design and developement by &copy;Adam Fluke. <a href="LICENSE">License and Terms of Use</a></p>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</div>
 </body>
 </html>
