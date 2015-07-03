@@ -1,7 +1,6 @@
 .panel {
   padding: 0px;
 }
-
 .row {
   margin-bottom: 10px;
 }
@@ -10,34 +9,27 @@
     font-size: 27px;
     padding: 10px;
 }
-
 .bigicon {
     font-size: 35px;
     color: #36A0FF;
 }
-
 .glyphicon {
   font-size: 1.4em;
   padding-top: 6px;
 }
-
 .contact_field {
   padding-left: 0px;
 }
-
 sup {
   font-size: 60%;
 }
-
 .blog-list-img {
   width: 150px;
 }
-
 img.divider {
   width: 50%;
   margin: 10px 25%;
 }
-
 .list-group-horizontal .list-group-item {
     display: inline-block;
 }
@@ -53,4 +45,7 @@ img.divider {
 .list-group-horizontal .list-group-item:last-child {
   border-top-right-radius:4px;
   border-bottom-left-radius:0;
+}
+.project-summary {
+  padding: 5px;
 }

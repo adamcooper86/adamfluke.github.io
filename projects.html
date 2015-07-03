@@ -1,46 +1,81 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8"/>
-  <title>Adam Fluke's Website | Projects</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <!-- Links for fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BipHub - Behavoir Data Management</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fix.css">
 </head>
 <body>
-<main>
-<nav>
-  <a href="index.html"><img src="imgs/home.png" alt="image of home hexagon"/></a>
-  <a href="blog/blog-index.html"><img src="imgs/blog.png" alt="Blog Hexagon"/></a>
-  <a href="about.html"><img src="imgs/about.png" alt="About me hexagon"></a>
-  <a href="https://twitter.com/fluke_adam" class="social"><img src="imgs/twitter.png" alt="Connect with me via twitter" /></a>
-  <a href="https://www.facebook.com/adam.fluke.1" class="social"><img src="imgs/facebook-poly.png" alt="Connect with me via facebook" /></a>
-</nav>
-<section id="projects">
-  <div class="project-summary">
-    <h1>Project One: This Website</h1>
-    <img src="imgs/site.png" alt="Screenshot of the original website design"/>
-    <p>This website design features a responsive web layout that scales from mobile deveices to large widescreen displays. It is a more traditional design meant to highlight the content and be comfortable for the eye to read.</p>
-  </div>
-  <div class="project-summary">
-    <h1>Project Two: Berkshire Hathaway Clone</h1>
-    <img src="imgs/berkshire.png" alt="Screenshot of the berkshire website design"/>
-    <p>During this project I worked collectively with team members to clone the Berkshire Hathaway homepage using current HTML5 standards. Primarily, this showed that I was able to communicate with my teammembers effectively, and alternate roles in partner-coding.</p>
-  </div>
-  <div class="project-summary">
-    <h1>Project Three: <a href="CheatSheet.html">Cheat Sheet</a></h1>
-    <img src="imgs/sheet.png" alt="Screenshot of the cheat sheet website design"/>
-    <p>I worked with other burgeoning developers to create handy review sheets for popular methods and techniques in Ruby. It was a chance to synthesize topics and see how other developers thought about these methods.</p>
-  </div>
-  <div class="project-summary">
-    <h1>Project Four: Next Project</h1>
-    <img src="imgs/gears.png" alt="Screenshot of the website design"/>
-    <p>I don't yet know what this challenge will entail, but I am sure it will continue to push the knowlege that I need to aquire to accomplish effective and efficient web-developement.</p>
-  </div>
-</section>
-<footer>
-  <p>Website design and developement by &copy;Adam Fluke. <a href="LICENSE">License and Terms of Use</a></p>
-</footer>
-</main>
+<div class="container-fluid">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand active" href="index.html">BipHub</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="blog/blog-index.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Developer <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="developer.html">Bio</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="articles.html">Articles</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+  <section class="container" id="projects">
+    <div class="row">
+      <h1 class="text-center bg-primary text-white">Projects:</h1>
+      <h2>I have been either independently developed or been involved in developing the several production applications. My favorite experience was creating WriteFast (project one) during a two day hackathon, and winning the Meaningful catagory with an amazing team.</h2>
+    </div>
+    <div class="row">
+      <div class="project-summary panel panel-default col-sm-6">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h3>Project One: WriteFast</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <img class="img img-rounded img-responsive" src="imgs/writefast-display.png" alt="Screenshot of the original WriteFast"/>
+          <a href="http://writefast.heroku.com" alt="Writefast website">See Live</a>
+          <p>The creation of WriteFast 1.0 was a miracle to be a part of. A team of six junoir developers came together with a single purpose, to make a free predictive text writing platform to help students learn to write sentences, paragraphs, and more. I learned so much about dividing up area's of responsiblity, Bootstrap, Sinatra, and Jquery plugins.</p>
+        </div>
+      </div>
+      <div class="project-summary panel panel-default col-sm-6">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h3>Project Two: BipHub</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <img src="imgs/BipHub.png" alt="Screenshot of the Biphub homepage" class="img img-rounded img-responsive"/>
+          <p>The BipHup website is an ongoing developement project. The challenge of delivering real-time behavoir data to teachers, and school leaders requires an ever growing technology stack that currently includes HTML5/CSS/Bootstrap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer row">
+    <div class="col-sm-2"></div>
+    <p class="col-sm-10">Website design and developement by &copy;Adam Fluke. <a href="LICENSE">License and Terms of Use</a></p>
+  </footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
